@@ -8,54 +8,6 @@ const blogPosts = [
         category: "AI for Kids",
         icon: "🌴",
         url: "post-jungle-transformers.html"
-    },
-    {
-        id: 2,
-        title: "Getting Started with Web Development",
-        excerpt: "A comprehensive guide to beginning your journey in web development. Learn the fundamentals and build your first website.",
-        date: "Jan 20, 2025",
-        category: "Tutorial",
-        icon: "💻"
-    },
-    {
-        id: 3,
-        title: "The Art of Writing Clean Code",
-        excerpt: "Discover best practices for writing maintainable, readable code that your future self will thank you for.",
-        date: "Jan 18, 2025",
-        category: "Development",
-        icon: "✨"
-    },
-    {
-        id: 4,
-        title: "Building Modern Web Applications",
-        excerpt: "Explore the latest trends and technologies in modern web application development and architecture.",
-        date: "Jan 15, 2025",
-        category: "Web Dev",
-        icon: "🚀"
-    },
-    {
-        id: 5,
-        title: "Design Principles That Matter",
-        excerpt: "Learn the fundamental principles of good design and how to apply them to your web projects.",
-        date: "Jan 12, 2025",
-        category: "Design",
-        icon: "🎨"
-    },
-    {
-        id: 6,
-        title: "JavaScript Tips and Tricks",
-        excerpt: "Master JavaScript with these essential tips, tricks, and patterns that every developer should know.",
-        date: "Jan 10, 2025",
-        category: "JavaScript",
-        icon: "⚡"
-    },
-    {
-        id: 7,
-        title: "Responsive Design Essentials",
-        excerpt: "Create websites that look great on any device with these responsive design techniques and strategies.",
-        date: "Jan 8, 2025",
-        category: "CSS",
-        icon: "📱"
     }
 ];
 

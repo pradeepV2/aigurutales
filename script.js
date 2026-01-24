@@ -2,6 +2,15 @@
 const blogPosts = [
     {
         id: 1,
+        title: "The Magical Jungle Translator: How Computers Learn Language",
+        excerpt: "Join the animals of Transformer Forest as they discover the magical translation machine! Learn how AI understands and speaks through an enchanting story perfect for curious minds.",
+        date: "Jan 25, 2025",
+        category: "AI for Kids",
+        icon: "🌴",
+        url: "post-jungle-transformers.html"
+    },
+    {
+        id: 2,
         title: "Getting Started with Web Development",
         excerpt: "A comprehensive guide to beginning your journey in web development. Learn the fundamentals and build your first website.",
         date: "Jan 20, 2025",
@@ -9,7 +18,7 @@ const blogPosts = [
         icon: "💻"
     },
     {
-        id: 2,
+        id: 3,
         title: "The Art of Writing Clean Code",
         excerpt: "Discover best practices for writing maintainable, readable code that your future self will thank you for.",
         date: "Jan 18, 2025",
@@ -17,7 +26,7 @@ const blogPosts = [
         icon: "✨"
     },
     {
-        id: 3,
+        id: 4,
         title: "Building Modern Web Applications",
         excerpt: "Explore the latest trends and technologies in modern web application development and architecture.",
         date: "Jan 15, 2025",
@@ -25,7 +34,7 @@ const blogPosts = [
         icon: "🚀"
     },
     {
-        id: 4,
+        id: 5,
         title: "Design Principles That Matter",
         excerpt: "Learn the fundamental principles of good design and how to apply them to your web projects.",
         date: "Jan 12, 2025",
@@ -33,7 +42,7 @@ const blogPosts = [
         icon: "🎨"
     },
     {
-        id: 5,
+        id: 6,
         title: "JavaScript Tips and Tricks",
         excerpt: "Master JavaScript with these essential tips, tricks, and patterns that every developer should know.",
         date: "Jan 10, 2025",
@@ -41,7 +50,7 @@ const blogPosts = [
         icon: "⚡"
     },
     {
-        id: 6,
+        id: 7,
         title: "Responsive Design Essentials",
         excerpt: "Create websites that look great on any device with these responsive design techniques and strategies.",
         date: "Jan 8, 2025",
@@ -52,8 +61,9 @@ const blogPosts = [
 
 // Function to create a post card
 function createPostCard(post) {
+    const clickHandler = post.url ? `window.location.href='${post.url}'` : `openPost(${post.id})`;
     return `
-        <article class="post-card" onclick="openPost(${post.id})">
+        <article class="post-card" onclick="${clickHandler}">
             <div class="post-image">${post.icon}</div>
             <div class="post-content">
                 <div class="post-meta">
@@ -62,7 +72,7 @@ function createPostCard(post) {
                 </div>
                 <h3 class="post-title">${post.title}</h3>
                 <p class="post-excerpt">${post.excerpt}</p>
-                <a href="#" class="read-more" onclick="event.stopPropagation();">Read More</a>
+                <a href="${post.url || '#'}" class="read-more" onclick="event.stopPropagation();">Read More</a>
             </div>
         </article>
     `;

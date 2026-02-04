@@ -6,82 +6,11 @@ A beautiful, responsive blog website ready to deploy!
 
 ### Option 1: Deploy via GitHub (Recommended)
 
-1. **Create a GitHub account** (if you don't have one)
-   - Go to https://github.com
-   - Sign up for free
-
-2. **Create a new repository**
-   - Click "New repository"
-   - Name it: `my-blog`
-   - Make it public
-   - Click "Create repository"
-
-3. **Upload your files to GitHub**
-   - Click "uploading an existing file"
-   - Drag and drop ALL files: `index.html`, `styles.css`, `script.js`
-   - Click "Commit changes"
-
-4. **Deploy to Vercel**
-   - Go to https://vercel.com
-   - Click "Sign up" and choose "Continue with GitHub"
-   - Click "Import Project"
-   - Select your `my-blog` repository
-   - Click "Deploy"
-   - Wait 30 seconds - Done! 🎉
-
 ### Option 2: Deploy via Vercel CLI (Fastest)
-
-1. **Install Vercel CLI**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy**
-   ```bash
-   cd your-blog-folder
-   vercel
-   ```
-
-3. Follow the prompts - Done in 1 minute! 🎉
 
 ## 🔗 Connect Your Namecheap Domain
 
-After deploying to Vercel:
-
-1. **In Vercel Dashboard**
-   - Go to your project
-   - Click "Settings" → "Domains"
-   - Add your domain (e.g., `yourdomain.com`)
-   - Copy the DNS records shown
-
-2. **In Namecheap**
-   - Go to Domain List → Manage
-   - Click "Advanced DNS"
-   - Add the DNS records from Vercel:
-     - Type: `A Record`, Host: `@`, Value: `76.76.21.21`
-     - Type: `CNAME`, Host: `www`, Value: `cname.vercel-dns.com`
-   - Save changes
-
-3. **Wait 5-30 minutes** for DNS propagation
-   - Your blog will be live at your custom domain! 🌐
-
 ## ✏️ How to Add New Blog Posts
-
-1. Open `script.js`
-2. Add a new post to the `blogPosts` array:
-
-```javascript
-{
-    id: 7,
-    title: "Your New Post Title",
-    excerpt: "A brief description of your post...",
-    date: "Jan 25, 2025",
-    category: "Your Category",
-    icon: "🎯"  // Choose any emoji
-}
-```
-
-3. Save and redeploy (Vercel auto-deploys if connected to GitHub!)
 
 ## 🎨 Customize Your Blog
 

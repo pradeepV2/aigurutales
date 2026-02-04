@@ -8,32 +8,6 @@ A beautiful, responsive blog website ready to deploy!
 
 ### Option 2: Deploy via Vercel CLI (Fastest)
 
-## 🔗 Connect Your Namecheap Domain
-
-## ✏️ How to Add New Blog Posts
-
-## 🎨 Customize Your Blog
-
-### Change Colors
-Edit `styles.css` → Look for `:root` section:
-```css
---color-bg: #fdfcfa;        /* Background color */
---color-text: #1a1a1a;      /* Text color */
---color-accent: #d4a574;    /* Accent color */
-```
-
-### Change Blog Title
-Edit `index.html` → Find:
-```html
-<h1 class="site-title">Your Blog</h1>
-```
-
-### Change Hero Section
-Edit `index.html` → Find `.hero-content`:
-```html
-<h2 class="hero-title">A Space for Stories</h2>
-```
-
 ## 📁 File Structure
 
 ```

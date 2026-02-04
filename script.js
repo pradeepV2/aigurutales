@@ -2,11 +2,20 @@
 const blogPosts = [
     {
         id: 1,
+        title: "The Great Jungle Challenge: Complete AI Guide",
+        excerpt: "The EPIC 5,600-line interactive adventure! Meet all 10 AI animals - Eagle (CNN), Elephant (LSTM), Lion (Transformer), Owl (BERT), Parrot (GPT), Giraffe (LLaMA), Twins (GAN), Chameleon (VAE), and Snail (Diffusion). Learn how every major AI works!",
+        date: "Feb 4, 2025",
+        category: "AI Deep Dive",
+        icon: "🌴",
+        url: "post-ai-jungle-complete.html"
+    },
+    {
+        id: 2,
         title: "The Magical Jungle Translator: How Computers Learn Language",
         excerpt: "Join the animals of Transformer Forest as they discover the magical translation machine! Learn how AI understands and speaks through an enchanting story perfect for curious minds.",
         date: "Jan 25, 2025",
         category: "AI for Kids",
-        icon: "🌴",
+        icon: "🦁",
         url: "post-jungle-transformers.html"
     }
 ];
@@ -37,15 +46,11 @@ function renderPosts() {
     postsGrid.innerHTML = postsHTML;
 }
 
-// Function to handle post click (you can customize this)
+// Function to handle post click
 function openPost(postId) {
     const post = blogPosts.find(p => p.id === postId);
-    if (post) {
-        // For now, just alert. You can later navigate to a post detail page
-        alert(`Opening: ${post.title}\n\nYou can create a separate page for this post or add a modal to display the full content.`);
-        
-        // Example: Navigate to a detail page
-        // window.location.href = `post.html?id=${postId}`;
+    if (post && post.url) {
+        window.location.href = post.url;
     }
 }
 
@@ -82,8 +87,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all post cards
+// Observe all post cards after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
-    const postCards = document.querySelectorAll('.post-card');
-    postCards.forEach(card => observer.observe(card));
+    setTimeout(() => {
+        const postCards = document.querySelectorAll('.post-card');
+        postCards.forEach(card => observer.observe(card));
+    }, 100);
 });

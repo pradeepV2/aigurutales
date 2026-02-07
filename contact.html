@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AI Guru Tales</title>
+    <meta name="description" content="Get in touch for AI education collaborations or business solutions. Free consultation available.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .contact-hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), transparent);
+        }
+        
+        .contact-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-hero p {
+            font-size: 1.3rem;
+            color: #6b5d4f;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            padding: 2rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #d4a574;
+        }
+        
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #d4a574;
+        }
+        
+        .contact-item p {
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        .contact-form {
+            background: white;
+            border: 2px solid #e8e3db;
+            border-radius: 12px;
+            padding: 3rem;
+        }
+        
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .form-group label span {
+            color: #d4a574;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e8e3db;
+            border-radius: 6px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4a574;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #d4a574;
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #c09463;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.3);
+        }
+        
+        .success-message {
+            display: none;
+            padding: 1.5rem;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            color: #155724;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">AI Guru Tales</a>
+                </h1>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Let's Talk</h1>
+            <p>Whether you're interested in AI education or business solutions, let's connect!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            
+            <div class="contact-item">
+                <h4>📚 For Education & Collaboration</h4>
+                <p>Questions about the stories, teaching resources, or collaboration on educational content.</p>
+            </div>
+            
+            <div class="contact-item">
+                <h4>💼 For Business Inquiries</h4>
+                <p>Custom AI development, chatbots, automation, consulting, or speaking engagements.</p>
+            </div>
+            
+            <div class="contact-item">
+                <h4>⚡ Free Consultation</h4>
+                <p>30-minute discovery call to discuss your AI needs and explore how we can help.</p>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <h4 style="margin-bottom: 1rem;">Connect Directly</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <a href="#" style="color: #d4a574; text-decoration: none; font-weight: 500;">🔗 LinkedIn</a>
+                    <a href="#" style="color: #d4a574; text-decoration: none; font-weight: 500;">🐦 Twitter/X</a>
+                    <a href="#" style="color: #d4a574; text-decoration: none; font-weight: 500;">💻 GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>Send a Message</h3>
+            
+            <div id="success-message" class="success-message">
+                ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+            </div>
+            
+            <!-- Netlify Form -->
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+                <!-- Honeypot for spam protection -->
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                
+                <div class="form-group">
+                    <label for="name">Name <span>*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry-type">Inquiry Type <span>*</span></label>
+                    <select id="inquiry-type" name="inquiry-type" required>
+                        <option value="">Select one...</option>
+                        <option value="ai-development">AI Development Project</option>
+                        <option value="consulting">AI Consulting</option>
+                        <option value="education">Education / Teaching Resources</option>
+                        <option value="speaking">Speaking Engagement</option>
+                        <option value="general">General Inquiry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message <span>*</span></label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your project or question..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+                
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #6b5d4f;">
+                    I typically respond within 24-48 hours.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem;">Common Questions</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">How much do AI projects typically cost?</h4>
+                <p style="color: #1a1a1a; line-height: 1.6;">Every project is unique. After our free consultation, I'll provide a custom quote based on your specific needs, timeline, and complexity.</p>
+            </div>
+            
+            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">How long does a typical AI project take?</h4>
+                <p style="color: #1a1a1a; line-height: 1.6;">Simple chatbots: 1-2 weeks. Automation systems: 2-4 weeks. Complex agentic systems: 4-8 weeks. Timeline depends on scope and requirements.</p>
+            </div>
+            
+            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">Do you offer ongoing support?</h4>
+                <p style="color: #1a1a1a; line-height: 1.6;">Yes! I offer maintenance retainers and ongoing optimization packages for deployed AI systems.</p>
+            </div>
+            
+            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">Can I use your educational content in my classroom?</h4>
+                <p style="color: #1a1a1a; line-height: 1.6;">Absolutely! The educational stories are free to use for teaching purposes. Just provide attribution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">AI Guru Tales</h3>
+                    <p style="color: #6b5d4f; line-height: 1.6;">Making AI accessible through education and professional solutions.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="index.html" style="color: #6b5d4f; text-decoration: none;">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html" style="color: #6b5d4f; text-decoration: none;">AI Guide</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="services.html" style="color: #6b5d4f; text-decoration: none;">AI Services</a>
+                        <a href="portfolio.html" style="color: #6b5d4f; text-decoration: none;">Portfolio</a>
+                        <a href="contact.html" style="color: #6b5d4f; text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #e8e3db; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #6b5d4f;">© 2025 AI Guru Tales. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        
+        form.addEventListener('submit', function(e) {
+            // Netlify handles the actual submission
+            // This just shows the success message after submission
+            setTimeout(() => {
+                successMessage.style.display = 'block';
+                form.reset();
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

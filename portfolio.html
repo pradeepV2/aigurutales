@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - AI Guru Tales</title>
+    <meta name="description" content="AI projects and case studies. Custom chatbots, automation systems, and intelligent agents.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .portfolio-hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), transparent);
+        }
+        
+        .portfolio-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-hero p {
+            font-size: 1.3rem;
+            color: #6b5d4f;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .coming-soon {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            background: white;
+            border: 2px solid #e8e3db;
+            border-radius: 12px;
+        }
+        
+        .coming-soon-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .coming-soon h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coming-soon p {
+            font-size: 1.2rem;
+            color: #6b5d4f;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+            opacity: 0.3;
+        }
+        
+        .project-card {
+            background: white;
+            border: 2px solid #e8e3db;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-color: #d4a574;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #d4a574, #c09463);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-category {
+            font-size: 0.9rem;
+            color: #d4a574;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: #6b5d4f;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            padding: 0.25rem 0.75rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #6b5d4f;
+        }
+        
+        .cta-box {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #d4a574, #c09463);
+            color: white;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        
+        .cta-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-box a {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #d4a574;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-box a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">AI Guru Tales</a>
+                </h1>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>AI Projects & Case Studies</h1>
+            <p>Real-world AI solutions that deliver results</p>
+        </div>
+    </section>
+
+    <!-- Coming Soon Notice -->
+    <div class="container">
+        <div class="coming-soon">
+            <div class="coming-soon-icon">🚀</div>
+            <h2>Portfolio Coming Soon!</h2>
+            <p>Currently building the first AI projects. Check back soon to see real-world case studies, client testimonials, and detailed project breakdowns.</p>
+            <p style="font-size: 1rem; margin-top: 2rem;">In the meantime, let's discuss how AI can help your business!</p>
+            <a href="contact.html" style="display: inline-block; padding: 1rem 2.5rem; background: #d4a574; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 1rem;">Schedule Free Consultation →</a>
+        </div>
+
+        <!-- Example Project Cards (Template for future) -->
+        <div class="portfolio-grid">
+            <!-- Template Project 1 -->
+            <div class="project-card">
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <div class="project-category">AI CHATBOT</div>
+                    <h3 class="project-title">Customer Service Automation</h3>
+                    <p class="project-description">Intelligent chatbot that reduced customer response time by 80% and handles 500+ conversations monthly.</p>
+                    <div class="project-tags">
+                        <span class="tag">GPT-4</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">React</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Project 2 -->
+            <div class="project-card">
+                <div class="project-image">⚡</div>
+                <div class="project-content">
+                    <div class="project-category">AUTOMATION</div>
+                    <h3 class="project-title">Document Processing System</h3>
+                    <p class="project-description">AI-powered invoice processing that saves 20 hours/week and increased accuracy to 99.5%.</p>
+                    <div class="project-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Project 3 -->
+            <div class="project-card">
+                <div class="project-image">🎯</div>
+                <div class="project-content">
+                    <div class="project-category">AGENTIC AI</div>
+                    <h3 class="project-title">Research Assistant Agent</h3>
+                    <p class="project-description">Multi-tool agent that autonomously researches topics, summarizes findings, and generates reports.</p>
+                    <div class="project-tags">
+                        <span class="tag">AutoGen</span>
+                        <span class="tag">Multi-Agent</span>
+                        <span class="tag">RAG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What Projects Will Include -->
+        <section style="max-width: 900px; margin: 4rem auto; padding: 0 2rem;">
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem;">What Each Case Study Will Include</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                    <h4 style="margin-bottom: 1rem; color: #d4a574;">📋 The Challenge</h4>
+                    <p style="color: #6b5d4f;">What problem the client needed to solve</p>
+                </div>
+                
+                <div style="padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                    <h4 style="margin-bottom: 1rem; color: #d4a574;">💡 The Solution</h4>
+                    <p style="color: #6b5d4f;">AI approach and technologies used</p>
+                </div>
+                
+                <div style="padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                    <h4 style="margin-bottom: 1rem; color: #d4a574;">📊 The Results</h4>
+                    <p style="color: #6b5d4f;">Measurable impact and outcomes</p>
+                </div>
+                
+                <div style="padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                    <h4 style="margin-bottom: 1rem; color: #d4a574;">💬 Client Feedback</h4>
+                    <p style="color: #6b5d4f;">Testimonials and satisfaction</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>Let's Build Your Project</h3>
+            <p style="font-size: 1.1rem;">Your AI solution could be the next case study here!</p>
+            <a href="contact.html">Get Started →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">AI Guru Tales</h3>
+                    <p style="color: #6b5d4f; line-height: 1.6;">Making AI accessible through education and professional solutions.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="index.html" style="color: #6b5d4f; text-decoration: none;">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html" style="color: #6b5d4f; text-decoration: none;">AI Guide</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="services.html" style="color: #6b5d4f; text-decoration: none;">AI Services</a>
+                        <a href="portfolio.html" style="color: #6b5d4f; text-decoration: none;">Portfolio</a>
+                        <a href="contact.html" style="color: #6b5d4f; text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #e8e3db; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #6b5d4f;">© 2025 AI Guru Tales. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

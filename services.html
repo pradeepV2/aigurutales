@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solutions & Services - AI Guru Tales</title>
+    <meta name="description" content="Custom AI chatbots, automation, and intelligent agents. Expert in ML, DL, GenAI, and Agentic AI. Transform your business with AI solutions.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .services-hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), transparent);
+        }
+        
+        .services-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .services-hero p {
+            font-size: 1.3rem;
+            color: #6b5d4f;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            border: 2px solid #e8e3db;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-color: #d4a574;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #6b5d4f;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #1a1a1a;
+        }
+        
+        .service-features li:before {
+            content: "✓ ";
+            color: #d4a574;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #d4a574, #c09463);
+            color: white;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: white;
+            color: #d4a574;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .tech-stack {
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .tech-stack h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        .process-section {
+            margin: 4rem 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: #d4a574;
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .process-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">AI Guru Tales</a>
+                </h1>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link active">Services</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>AI Solutions for Your Business</h1>
+            <p>Transform your operations with custom AI chatbots, automation, and intelligent agents. Expert solutions in Machine Learning, Deep Learning, Generative AI, and Agentic AI.</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <main class="blog-container">
+        <div class="container">
+            <div class="service-grid">
+                <!-- Service 1: AI Chatbots -->
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Custom AI Chatbots</h3>
+                    <p>Intelligent conversational agents tailored to your business needs. From customer service to internal support.</p>
+                    <ul class="service-features">
+                        <li>24/7 customer support automation</li>
+                        <li>Multi-language capabilities</li>
+                        <li>Integration with your existing systems</li>
+                        <li>Custom training on your data</li>
+                        <li>Continuous learning & improvement</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Customer service, sales support, internal helpdesk</p>
+                </div>
+
+                <!-- Service 2: Workflow Automation -->
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>AI Workflow Automation</h3>
+                    <p>Automate repetitive tasks and streamline your operations with intelligent AI solutions.</p>
+                    <ul class="service-features">
+                        <li>Document processing & extraction</li>
+                        <li>Data entry automation</li>
+                        <li>Report generation</li>
+                        <li>Email & communication automation</li>
+                        <li>Invoice & receipt processing</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Finance, legal, healthcare, operations teams</p>
+                </div>
+
+                <!-- Service 3: AI Agents -->
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Agentic AI Systems</h3>
+                    <p>Multi-step autonomous AI agents that can plan, execute, and adapt to complex workflows.</p>
+                    <ul class="service-features">
+                        <li>Multi-tool integration</li>
+                        <li>Complex task orchestration</li>
+                        <li>Decision-making capabilities</li>
+                        <li>Self-correcting workflows</li>
+                        <li>API & database connectivity</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Research, data analysis, complex automations</p>
+                </div>
+
+                <!-- Service 4: Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>AI Consulting & Strategy</h3>
+                    <p>Expert guidance on implementing AI in your organization. From strategy to execution.</p>
+                    <ul class="service-features">
+                        <li>AI opportunity assessment</li>
+                        <li>Technology stack recommendations</li>
+                        <li>Implementation roadmap</li>
+                        <li>Team training & workshops</li>
+                        <li>Ongoing support & optimization</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Companies starting their AI journey</p>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <section class="tech-stack">
+                <h2>Technologies & Expertise</h2>
+                <p style="max-width: 700px; margin: 0 auto 2rem; color: #6b5d4f;">Building with cutting-edge AI technologies and frameworks</p>
+                
+                <div class="tech-grid">
+                    <div class="tech-item">🤖 OpenAI GPT</div>
+                    <div class="tech-item">🧠 Claude (Anthropic)</div>
+                    <div class="tech-item">⚡ LangChain</div>
+                    <div class="tech-item">🔗 LlamaIndex</div>
+                    <div class="tech-item">🎯 AutoGen</div>
+                    <div class="tech-item">🗃️ Vector Databases</div>
+                    <div class="tech-item">🐍 Python</div>
+                    <div class="tech-item">☁️ Cloud Deployment</div>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section class="process-section">
+                <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">How We Work</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; color: #6b5d4f;">A streamlined process from discovery to delivery</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Discovery Call</h3>
+                        <p>Free 30-minute consultation to understand your needs and explore opportunities</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Proposal</h3>
+                        <p>Detailed project plan, timeline, and custom quote based on your requirements</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Development</h3>
+                        <p>Agile development with regular updates and checkpoints</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Delivery & Support</h3>
+                        <p>Deployment, training, and ongoing maintenance options</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Ready to Transform Your Business with AI?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Let's discuss how AI can solve your specific challenges</p>
+                <p>Free 30-minute consultation • No obligation • Custom solutions</p>
+                <a href="contact.html" class="cta-button">Schedule Free Consultation →</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">AI Guru Tales</h3>
+                    <p style="color: #6b5d4f; line-height: 1.6;">Making AI accessible through education and professional solutions.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="index.html" style="color: #6b5d4f; text-decoration: none;">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html" style="color: #6b5d4f; text-decoration: none;">AI Guide</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="services.html" style="color: #6b5d4f; text-decoration: none;">AI Services</a>
+                        <a href="portfolio.html" style="color: #6b5d4f; text-decoration: none;">Portfolio</a>
+                        <a href="contact.html" style="color: #6b5d4f; text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #e8e3db; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #6b5d4f;">© 2025 AI Guru Tales. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

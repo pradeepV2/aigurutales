@@ -1,9 +1,9 @@
-// Blog posts data - Add your blog posts here
+// Blog posts data — add new posts here
 const blogPosts = [
     {
         id: 1,
         title: "The Great Jungle Challenge: Complete AI Guide",
-        excerpt: "The EPIC 5,600-line interactive adventure! Meet all 10 AI animals - Eagle (CNN), Elephant (LSTM), Lion (Transformer), Owl (BERT), Parrot (GPT), Giraffe (LLaMA), Twins (GAN), Chameleon (VAE), and Snail (Diffusion). Learn how every major AI works!",
+        excerpt: "The EPIC 5,600-line interactive adventure! Meet all 10 AI animals — Eagle (CNN), Elephant (LSTM), Lion (Transformer), Owl (BERT), Parrot (GPT), Giraffe (LLaMA), Twins (GAN), Chameleon (VAE), and Snail (Diffusion). Learn how every major AI works!",
         date: "Feb 4, 2025",
         category: "AI Deep Dive",
         icon: "🌴",
@@ -20,9 +20,12 @@ const blogPosts = [
     }
 ];
 
-// Function to create a post card
+// Create a single post card element
 function createPostCard(post) {
-    const clickHandler = post.url ? `window.location.href='${post.url}'` : `openPost(${post.id})`;
+    const clickHandler = post.url
+        ? `window.location.href='${post.url}'`
+        : `openPost(${post.id})`;
+
     return `
         <article class="post-card" onclick="${clickHandler}">
             <div class="post-image">${post.icon}</div>
@@ -33,20 +36,20 @@ function createPostCard(post) {
                 </div>
                 <h3 class="post-title">${post.title}</h3>
                 <p class="post-excerpt">${post.excerpt}</p>
-                <a href="${post.url || '#'}" class="read-more" onclick="event.stopPropagation();">Read More</a>
+                <a href="${post.url || '#'}" class="read-more" onclick="event.stopPropagation();">Read Story</a>
             </div>
         </article>
     `;
 }
 
-// Function to render all posts
+// Render all posts into #posts-grid
 function renderPosts() {
     const postsGrid = document.getElementById('posts-grid');
-    const postsHTML = blogPosts.map(post => createPostCard(post)).join('');
-    postsGrid.innerHTML = postsHTML;
+    if (!postsGrid) return;
+    postsGrid.innerHTML = blogPosts.map(createPostCard).join('');
 }
 
-// Function to handle post click
+// Handle post click (fallback for posts without URLs)
 function openPost(postId) {
     const post = blogPosts.find(p => p.id === postId);
     if (post && post.url) {
@@ -54,26 +57,23 @@ function openPost(postId) {
     }
 }
 
-// Initialize the blog when page loads
+// Init
 document.addEventListener('DOMContentLoaded', () => {
     renderPosts();
-    
-    // Add smooth scrolling for navigation links
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 });
 
-// Add scroll animation trigger
+// Scroll-based reveal animation
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -87,10 +87,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all post cards after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
-        const postCards = document.querySelectorAll('.post-card');
-        postCards.forEach(card => observer.observe(card));
+        document.querySelectorAll('.post-card').forEach(card => observer.observe(card));
     }, 100);
 });

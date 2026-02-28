@@ -4,192 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Solutions & Services - AI Guru Tales</title>
-    <meta name="description" content="Custom AI chatbots, automation, and intelligent agents. Expert in ML, DL, GenAI, and Agentic AI. Transform your business with AI solutions.">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .services-hero {
-            text-align: center;
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), transparent);
+            text-align: center; padding: 7rem 0 4rem;
+            position: relative; overflow: hidden;
         }
-        
+        .services-hero::before {
+            content: ''; position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%); width: 120%; height: 100%;
+            background: radial-gradient(circle at top, rgba(212, 165, 116, 0.07), transparent 60%);
+            pointer-events: none;
+        }
+        .services-hero-content { position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .services-hero-label {
+            font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: #d4a574; font-weight: 500; margin-bottom: 1rem;
+        }
         .services-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 700;
+            line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.2rem;
         }
-        
-        .services-hero p {
-            font-size: 1.3rem;
-            color: #6b5d4f;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
+        .services-hero p { font-size: 1.2rem; color: #9a8475; max-width: 660px; margin: 0 auto; font-weight: 300; line-height: 1.8; }
+
+        /* Service Cards */
+        .services-section { padding: 5rem 0; }
         .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2rem; margin: 3rem 0 0;
         }
-        
         .service-card {
-            background: white;
-            border: 2px solid #e8e3db;
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            transition: all 0.3s ease;
+            background: #131110; border: 1px solid #252220;
+            border-radius: 8px; padding: 3rem 2.5rem; transition: all 0.3s ease;
         }
-        
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-            border-color: #d4a574;
+            transform: translateY(-6px); border-color: rgba(212, 165, 116, 0.35);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
+        .service-icon { font-size: 2.8rem; margin-bottom: 1.5rem; }
         .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif; font-size: 1.7rem;
+            margin-bottom: 1rem; letter-spacing: -0.01em;
         }
-        
-        .service-card p {
-            color: #6b5d4f;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-features {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-        
+        .service-card > p { color: #9a8475; line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .service-features { list-style: none; padding: 0; margin: 1.5rem 0; }
         .service-features li {
-            padding: 0.5rem 0;
-            color: #1a1a1a;
+            padding: 0.45rem 0; color: #9a8475; font-size: 0.9rem;
+            border-bottom: 1px solid #1e1c19;
         }
-        
-        .service-features li:before {
-            content: "✓ ";
-            color: #d4a574;
-            font-weight: bold;
-            margin-right: 0.5rem;
+        .service-features li:last-child { border-bottom: none; }
+        .service-features li::before { content: "✓ "; color: #d4a574; font-weight: bold; margin-right: 0.4rem; }
+        .service-card .perfect-for {
+            font-size: 0.85rem; color: #9a8475; margin-top: 1rem;
+            padding-top: 1rem; border-top: 1px solid #1e1c19;
         }
-        
-        .cta-section {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #d4a574, #c09463);
-            color: white;
-            border-radius: 12px;
-            margin: 4rem 0;
+        .service-card .perfect-for strong { color: #d4a574; }
+
+        /* Section label */
+        .section-label {
+            font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: #d4a574; font-weight: 500; margin-bottom: 1rem; display: block;
         }
-        
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
+        .section-title {
+            font-family: 'Playfair Display', serif; font-size: 2.4rem;
+            font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.6rem;
         }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: white;
-            color: #d4a574;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        
-        .tech-stack {
-            margin: 4rem 0;
-            text-align: center;
-        }
-        
-        .tech-stack h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-        
+        .section-subtitle { color: #9a8475; font-size: 1rem; }
+
+        /* Tech Stack */
+        .tech-stack { padding: 5rem 0; background: #0f0d0b; }
         .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem; margin-top: 3rem;
         }
-        
         .tech-item {
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            font-weight: 500;
+            padding: 1.2rem 1.5rem; background: #131110;
+            border: 1px solid #252220; border-radius: 4px;
+            font-weight: 500; font-size: 0.9rem; text-align: center;
+            color: #9a8475; transition: all 0.3s ease;
         }
-        
-        .process-section {
-            margin: 4rem 0;
-        }
-        
+        .tech-item:hover { border-color: rgba(212, 165, 116, 0.3); color: #f0ece4; }
+
+        /* Process */
+        .process-section { padding: 5rem 0; }
         .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem; margin-top: 3rem;
         }
-        
-        .process-step {
-            text-align: center;
-            padding: 2rem;
-        }
-        
+        .process-step { text-align: center; padding: 2.5rem 2rem; }
         .step-number {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: #d4a574;
-            color: white;
-            border-radius: 50%;
-            line-height: 60px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 56px; height: 56px; background: linear-gradient(135deg, #d4a574, #c09463);
+            color: #0c0a08; border-radius: 50%;
+            font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem;
         }
-        
-        .process-step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .process-step h3 { font-size: 1.15rem; margin-bottom: 0.6rem; font-weight: 600; }
+        .process-step p { color: #9a8475; font-size: 0.92rem; line-height: 1.7; }
+
+        /* CTA */
+        .cta-section {
+            text-align: center; padding: 5rem 2rem;
+            background: linear-gradient(135deg, #d4a574, #c09463);
+            color: white; border-radius: 8px; margin: 4rem 0 5rem;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 2.6rem;
+            margin-bottom: 1rem; color: white !important; letter-spacing: -0.02em;
+        }
+        .cta-section p { opacity: 0.92; font-size: 1.05rem; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+        .cta-section .fine-print { font-size: 0.88rem; margin-top: 0.75rem; opacity: 0.8; }
+        .cta-button {
+            display: inline-block; padding: 1rem 3rem; background: white;
+            color: #c09463 !important; text-decoration: none; border-radius: 4px;
+            font-weight: 600; margin-top: 2rem; transition: all 0.3s ease;
+            font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+
+        @media (max-width: 768px) {
+            .services-hero h1 { font-size: 2.5rem; }
+            .service-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .process-steps { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <h1 class="site-title">
-                    <a href="index.html" style="text-decoration: none; color: inherit;">AI Guru Tales</a>
-                </h1>
+                <h1 class="site-title"><a href="index.html">AI Guru Tales</a></h1>
                 <nav class="main-nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="services.html" class="nav-link active">Services</a>
                     <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
@@ -197,19 +152,22 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="services-hero">
         <div class="container">
-            <h1>AI Solutions for Your Business</h1>
-            <p>Transform your operations with custom AI chatbots, automation, and intelligent agents. Expert solutions in Machine Learning, Deep Learning, Generative AI, and Agentic AI.</p>
+            <div class="services-hero-content">
+                <p class="services-hero-label">Professional AI Services</p>
+                <h1>AI Solutions for<br>Your Business</h1>
+                <p>Transform your operations with custom AI chatbots, automation, and intelligent agents. Built with expertise in Machine Learning, Generative AI, and Agentic Systems.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <main class="blog-container">
+    <section class="services-section">
         <div class="container">
+            <span class="section-label">What I Build</span>
+            <h2 class="section-title">Core Services</h2>
+            <p class="section-subtitle">End-to-end AI solutions tailored to your specific needs</p>
             <div class="service-grid">
-                <!-- Service 1: AI Chatbots -->
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
                     <h3>Custom AI Chatbots</h3>
@@ -219,27 +177,25 @@
                         <li>Multi-language capabilities</li>
                         <li>Integration with your existing systems</li>
                         <li>Custom training on your data</li>
-                        <li>Continuous learning & improvement</li>
+                        <li>Continuous learning &amp; improvement</li>
                     </ul>
-                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Customer service, sales support, internal helpdesk</p>
+                    <p class="perfect-for"><strong>Perfect for:</strong> Customer service, sales support, internal helpdesk</p>
                 </div>
 
-                <!-- Service 2: Workflow Automation -->
                 <div class="service-card">
                     <div class="service-icon">⚡</div>
                     <h3>AI Workflow Automation</h3>
                     <p>Automate repetitive tasks and streamline your operations with intelligent AI solutions.</p>
                     <ul class="service-features">
-                        <li>Document processing & extraction</li>
+                        <li>Document processing &amp; extraction</li>
                         <li>Data entry automation</li>
                         <li>Report generation</li>
-                        <li>Email & communication automation</li>
-                        <li>Invoice & receipt processing</li>
+                        <li>Email &amp; communication automation</li>
+                        <li>Invoice &amp; receipt processing</li>
                     </ul>
-                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Finance, legal, healthcare, operations teams</p>
+                    <p class="perfect-for"><strong>Perfect for:</strong> Finance, legal, healthcare, operations teams</p>
                 </div>
 
-                <!-- Service 3: AI Agents -->
                 <div class="service-card">
                     <div class="service-icon">🎯</div>
                     <h3>Agentic AI Systems</h3>
@@ -249,116 +205,126 @@
                         <li>Complex task orchestration</li>
                         <li>Decision-making capabilities</li>
                         <li>Self-correcting workflows</li>
-                        <li>API & database connectivity</li>
+                        <li>API &amp; database connectivity</li>
                     </ul>
-                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Research, data analysis, complex automations</p>
+                    <p class="perfect-for"><strong>Perfect for:</strong> Research, data analysis, complex automations</p>
                 </div>
 
-                <!-- Service 4: Consulting -->
                 <div class="service-card">
                     <div class="service-icon">💡</div>
-                    <h3>AI Consulting & Strategy</h3>
+                    <h3>AI Consulting &amp; Strategy</h3>
                     <p>Expert guidance on implementing AI in your organization. From strategy to execution.</p>
                     <ul class="service-features">
                         <li>AI opportunity assessment</li>
                         <li>Technology stack recommendations</li>
                         <li>Implementation roadmap</li>
-                        <li>Team training & workshops</li>
-                        <li>Ongoing support & optimization</li>
+                        <li>Team training &amp; workshops</li>
+                        <li>Ongoing support &amp; optimization</li>
                     </ul>
-                    <p style="margin-top: 1.5rem;"><strong>Perfect for:</strong> Companies starting their AI journey</p>
+                    <p class="perfect-for"><strong>Perfect for:</strong> Companies starting their AI journey</p>
                 </div>
             </div>
-
-            <!-- Technology Stack -->
-            <section class="tech-stack">
-                <h2>Technologies & Expertise</h2>
-                <p style="max-width: 700px; margin: 0 auto 2rem; color: #6b5d4f;">Building with cutting-edge AI technologies and frameworks</p>
-                
-                <div class="tech-grid">
-                    <div class="tech-item">🤖 OpenAI GPT</div>
-                    <div class="tech-item">🧠 Claude (Anthropic)</div>
-                    <div class="tech-item">⚡ LangChain</div>
-                    <div class="tech-item">🔗 LlamaIndex</div>
-                    <div class="tech-item">🎯 AutoGen</div>
-                    <div class="tech-item">🗃️ Vector Databases</div>
-                    <div class="tech-item">🐍 Python</div>
-                    <div class="tech-item">☁️ Cloud Deployment</div>
-                </div>
-            </section>
-
-            <!-- Process Section -->
-            <section class="process-section">
-                <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">How We Work</h2>
-                <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; color: #6b5d4f;">A streamlined process from discovery to delivery</p>
-                
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h3>Discovery Call</h3>
-                        <p>Free 30-minute consultation to understand your needs and explore opportunities</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h3>Proposal</h3>
-                        <p>Detailed project plan, timeline, and custom quote based on your requirements</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h3>Development</h3>
-                        <p>Agile development with regular updates and checkpoints</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h3>Delivery & Support</h3>
-                        <p>Deployment, training, and ongoing maintenance options</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="cta-section">
-                <h2>Ready to Transform Your Business with AI?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Let's discuss how AI can solve your specific challenges</p>
-                <p>Free 30-minute consultation • No obligation • Custom solutions</p>
-                <a href="contact.html" class="cta-button">Schedule Free Consultation →</a>
-            </section>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
+    <section class="tech-stack">
+        <div class="container">
+            <span class="section-label">Technologies</span>
+            <h2 class="section-title">Expertise &amp; Stack</h2>
+            <p class="section-subtitle">Building with cutting-edge AI technologies and frameworks</p>
+            <div class="tech-grid">
+                <div class="tech-item">🤖 OpenAI GPT</div>
+                <div class="tech-item">🧠 Claude (Anthropic)</div>
+                <div class="tech-item">⚡ LangChain</div>
+                <div class="tech-item">🔗 LlamaIndex</div>
+                <div class="tech-item">🎯 AutoGen</div>
+                <div class="tech-item">🗃️ Vector Databases</div>
+                <div class="tech-item">🐍 Python</div>
+                <div class="tech-item">☁️ Cloud Deployment</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <span class="section-label">How We Work</span>
+            <h2 class="section-title">The Process</h2>
+            <p class="section-subtitle">A streamlined path from discovery to delivery</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery Call</h3>
+                    <p>Free 30-minute consultation to understand your needs and explore opportunities.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Proposal</h3>
+                    <p>Detailed project plan, timeline, and custom quote based on your requirements.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Agile development with regular updates, demos, and collaborative checkpoints.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Delivery &amp; Support</h3>
+                    <p>Full deployment, team training, and ongoing maintenance options available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="cta-section">
+            <h2>Ready to Transform Your Business with AI?</h2>
+            <p>Let's discuss how AI can solve your specific challenges and unlock new opportunities.</p>
+            <p class="fine-print">Free 30-minute consultation · No obligation · Custom solutions</p>
+            <a href="contact.html" class="cta-button">Schedule Free Consultation →</a>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
                 <div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">AI Guru Tales</h3>
-                    <p style="color: #6b5d4f; line-height: 1.6;">Making AI accessible through education and professional solutions.</p>
+                    <h3>AI Guru Tales</h3>
+                    <p style="margin-top: 0.75rem; line-height: 1.8;">Making AI accessible through education and professional solutions.</p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1rem;">Learn</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="index.html" style="color: #6b5d4f; text-decoration: none;">Educational Stories</a>
-                        <a href="post-ai-jungle-complete.html" style="color: #6b5d4f; text-decoration: none;">AI Guide</a>
+                    <h4>Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="blog.html">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html">AI Deep Dive</a>
+                        <a href="post-jungle-transformers.html">AI for Kids</a>
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1rem;">Work With Me</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="services.html" style="color: #6b5d4f; text-decoration: none;">AI Services</a>
-                        <a href="portfolio.html" style="color: #6b5d4f; text-decoration: none;">Portfolio</a>
-                        <a href="contact.html" style="color: #6b5d4f; text-decoration: none;">Contact</a>
+                    <h4>Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="services.html">AI Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">GitHub</a>
                     </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid #e8e3db; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #6b5d4f;">© 2025 AI Guru Tales. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
+            <div style="border-top: 1px solid #252220; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p>© 2025 AI Guru Tales. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

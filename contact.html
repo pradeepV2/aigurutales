@@ -4,179 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - AI Guru Tales</title>
-    <meta name="description" content="Get in touch for AI education collaborations or business solutions. Free consultation available.">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .contact-hero {
-            text-align: center;
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), transparent);
+            text-align: center; padding: 7rem 0 4rem;
+            position: relative; overflow: hidden;
         }
-        
+        .contact-hero::before {
+            content: ''; position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%); width: 120%; height: 100%;
+            background: radial-gradient(circle at top, rgba(212, 165, 116, 0.07), transparent 60%);
+            pointer-events: none;
+        }
+        .contact-hero-content { position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .contact-hero-label {
+            font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: #d4a574; font-weight: 500; margin-bottom: 1rem;
+        }
         .contact-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 700;
+            line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.2rem;
         }
-        
-        .contact-hero p {
-            font-size: 1.3rem;
-            color: #6b5d4f;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
+        .contact-hero p { font-size: 1.2rem; color: #9a8475; max-width: 560px; margin: 0 auto; font-weight: 300; line-height: 1.8; }
+
+        /* Layout */
         .contact-container {
-            max-width: 1000px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
+            max-width: 1060px; margin: 4rem auto; padding: 0 2rem;
+            display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start;
         }
-        
-        .contact-info {
-            padding: 2rem;
-        }
-        
+
+        /* Contact Info */
         .contact-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif; font-size: 1.8rem;
+            margin-bottom: 2rem; letter-spacing: -0.02em;
         }
-        
         .contact-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #d4a574;
+            margin-bottom: 1.25rem; padding: 1.5rem;
+            background: #131110; border-radius: 6px; border-left: 3px solid #d4a574;
+            transition: all 0.3s ease;
         }
-        
-        .contact-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #d4a574;
-        }
-        
-        .contact-item p {
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-        
+        .contact-item:hover { background: #1c1a17; }
+        .contact-item h4 { font-size: 1rem; margin-bottom: 0.5rem; color: #d4a574; font-weight: 600; }
+        .contact-item p { color: #9a8475; line-height: 1.6; font-size: 0.93rem; }
+        .contact-item a { color: #9a8475 !important; text-decoration: none; }
+        .contact-item a:hover { color: #d4a574 !important; }
+
+        /* Form */
         .contact-form {
-            background: white;
-            border: 2px solid #e8e3db;
-            border-radius: 12px;
-            padding: 3rem;
+            background: #131110; border: 1px solid #252220;
+            border-radius: 8px; padding: 3rem;
         }
-        
         .contact-form h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif; font-size: 1.8rem;
+            margin-bottom: 1.8rem; letter-spacing: -0.02em;
         }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #1a1a1a;
-        }
-        
-        .form-group label span {
-            color: #d4a574;
-        }
-        
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; color: #f0ece4; }
+        .form-group label span { color: #d4a574; }
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e8e3db;
-            border-radius: 6px;
-            font-family: 'Work Sans', sans-serif;
-            font-size: 1rem;
+            width: 100%; padding: 0.85rem 1rem;
+            border: 1px solid #2e2a26;
+            border-radius: 4px;
+            font-family: 'Work Sans', sans-serif; font-size: 0.95rem;
             transition: all 0.3s ease;
+            background: #0f0d0b; color: #f0ece4;
         }
-        
+        .form-group select option { background: #131110; color: #f0ece4; }
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            outline: none;
-            border-color: #d4a574;
+            outline: none; border-color: #d4a574;
             box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
         }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
+        .form-group textarea { min-height: 150px; resize: vertical; }
         .submit-btn {
-            background: #d4a574;
-            color: white;
-            padding: 1rem 3rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
+            background: #d4a574; color: #0c0a08;
+            padding: 1rem 3rem; border: none; border-radius: 4px;
+            font-size: 0.95rem; font-weight: 600; cursor: pointer;
+            transition: all 0.3s ease; width: 100%;
+            letter-spacing: 0.05em; text-transform: uppercase;
         }
-        
         .submit-btn:hover {
-            background: #c09463;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.3);
+            background: #c09463; transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 165, 116, 0.2);
         }
-        
         .success-message {
-            display: none;
-            padding: 1.5rem;
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 6px;
-            color: #155724;
-            margin-bottom: 1.5rem;
+            display: none; padding: 1.2rem 1.5rem;
+            background: rgba(212, 165, 116, 0.08);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 4px; color: #d4a574; margin-bottom: 1.5rem;
+            font-size: 0.93rem;
         }
-        
+        .form-note { margin-top: 1.2rem; font-size: 0.85rem; color: #9a8475; text-align: center; }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px; margin: 2rem auto 5rem; padding: 0 2rem;
+        }
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 2.2rem;
+            margin-bottom: 2.5rem; letter-spacing: -0.02em;
+        }
+        .faq-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1c19; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h4 { color: #d4a574; margin-bottom: 0.6rem; font-size: 1rem; font-weight: 600; }
+        .faq-item p { color: #9a8475; line-height: 1.7; font-size: 0.95rem; }
+
         @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .contact-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .contact-form {
-                padding: 2rem;
-            }
+            .contact-container { grid-template-columns: 1fr; gap: 2.5rem; }
+            .contact-hero h1 { font-size: 2.5rem; }
+            .contact-form { padding: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <h1 class="site-title">
-                    <a href="index.html" style="text-decoration: none; color: inherit;">AI Guru Tales</a>
-                </h1>
+                <h1 class="site-title"><a href="index.html">AI Guru Tales</a></h1>
                 <nav class="main-nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="services.html" class="nav-link">Services</a>
                     <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link active">Contact</a>
                 </nav>
@@ -184,71 +140,66 @@
         </div>
     </header>
 
-    <!-- Hero -->
     <section class="contact-hero">
         <div class="container">
-            <h1>Let's Talk</h1>
-            <p>Whether you're interested in AI education or business solutions, let's connect!</p>
+            <div class="contact-hero-content">
+                <p class="contact-hero-label">Get in Touch</p>
+                <h1>Let's Talk</h1>
+                <p>Whether you're interested in AI education or building business solutions, let's connect.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-container">
-        <!-- Contact Info -->
+    <div class="contact-container">
         <div class="contact-info">
-            <h3>Get in Touch</h3>
-            
+            <h3>Reach Out</h3>
+
             <div class="contact-item">
-                <h4>📚 For Education & Collaboration</h4>
+                <h4>📚 Education &amp; Collaboration</h4>
                 <p>Questions about the stories, teaching resources, or collaboration on educational content.</p>
             </div>
-            
+
             <div class="contact-item">
-                <h4>💼 For Business Inquiries</h4>
+                <h4>💼 Business Inquiries</h4>
                 <p>Custom AI development, chatbots, automation, consulting, or speaking engagements.</p>
             </div>
-            
+
             <div class="contact-item">
                 <h4>⚡ Free Consultation</h4>
-                <p>30-minute discovery call to discuss your AI needs and explore how we can help.</p>
+                <p>30-minute discovery call to discuss your AI needs — no obligation, no pressure.</p>
             </div>
-            
-            <div style="margin-top: 3rem;">
-                <h4 style="margin-bottom: 1rem;">Connect Directly</h4>
-                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                    <a href="#" style="color: #d4a574; text-decoration: none; font-weight: 500;">🔗 LinkedIn</a>
-                    <a href="#" style="color: #d4a574; text-decoration: none; font-weight: 500;">🐦 Twitter/X</a>
-                    <a href="#" style="color: #d4a574; text-decoration: none; font-weight: 500;">💻 GitHub</a>
-                </div>
+
+            <div class="contact-item">
+                <h4>🔗 Connect Directly</h4>
+                <p>
+                    <a href="#">LinkedIn →</a><br>
+                    <a href="#">Twitter / X →</a><br>
+                    <a href="#">GitHub →</a>
+                </p>
             </div>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact-form">
             <h3>Send a Message</h3>
-            
-            <div id="success-message" class="success-message">
-                ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+            <div class="success-message" id="success-message">
+                ✓ Thank you! Your message has been sent. I'll get back to you within 24–48 hours.
             </div>
-            
-            <!-- Netlify Form -->
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
-                <!-- Honeypot for spam protection -->
-                <input type="hidden" name="form-name" value="contact" />
-                <p style="display: none;">
-                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+
+            <form id="contact-form" name="contact" method="POST" netlify>
+                <p style="display:none;">
+                    <label>Don't fill this out: <input name="bot-field"></label>
                 </p>
-                
+
                 <div class="form-group">
                     <label for="name">Name <span>*</span></label>
                     <input type="text" id="name" name="name" required placeholder="Your name">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Email <span>*</span></label>
                     <input type="email" id="email" name="email" required placeholder="your@email.com">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="inquiry-type">Inquiry Type <span>*</span></label>
                     <select id="inquiry-type" name="inquiry-type" required>
@@ -260,98 +211,91 @@
                         <option value="general">General Inquiry</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="message">Message <span>*</span></label>
                     <textarea id="message" name="message" required placeholder="Tell me about your project or question..."></textarea>
                 </div>
-                
+
                 <button type="submit" class="submit-btn">Send Message</button>
-                
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #6b5d4f;">
-                    I typically respond within 24-48 hours.
-                </p>
+                <p class="form-note">Typically responds within 24–48 hours.</p>
             </form>
         </div>
-    </section>
+    </div>
 
-    <!-- FAQ Section -->
-    <section style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
-        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem;">Common Questions</h2>
-        
-        <div style="display: flex; flex-direction: column; gap: 2rem;">
-            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
-                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">How much do AI projects typically cost?</h4>
-                <p style="color: #1a1a1a; line-height: 1.6;">Every project is unique. After our free consultation, I'll provide a custom quote based on your specific needs, timeline, and complexity.</p>
-            </div>
-            
-            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
-                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">How long does a typical AI project take?</h4>
-                <p style="color: #1a1a1a; line-height: 1.6;">Simple chatbots: 1-2 weeks. Automation systems: 2-4 weeks. Complex agentic systems: 4-8 weeks. Timeline depends on scope and requirements.</p>
-            </div>
-            
-            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
-                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">Do you offer ongoing support?</h4>
-                <p style="color: #1a1a1a; line-height: 1.6;">Yes! I offer maintenance retainers and ongoing optimization packages for deployed AI systems.</p>
-            </div>
-            
-            <div style="padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
-                <h4 style="margin-bottom: 0.75rem; color: #d4a574;">Can I use your educational content in my classroom?</h4>
-                <p style="color: #1a1a1a; line-height: 1.6;">Absolutely! The educational stories are free to use for teaching purposes. Just provide attribution.</p>
-            </div>
+    <section class="faq-section">
+        <h2>Common Questions</h2>
+        <div class="faq-item">
+            <h4>How much do AI projects typically cost?</h4>
+            <p>Every project is unique. After our free consultation, I'll provide a custom quote based on your specific needs, timeline, and complexity.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How long does a typical AI project take?</h4>
+            <p>Simple chatbots: 1–2 weeks. Automation systems: 2–4 weeks. Complex agentic systems: 4–8 weeks. Timeline depends on scope and requirements.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do you offer ongoing support?</h4>
+            <p>Yes! I offer maintenance retainers and ongoing optimization packages for deployed AI systems.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I use your educational content in my classroom?</h4>
+            <p>Absolutely! The educational stories are free to use for teaching purposes. Just provide attribution.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
                 <div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">AI Guru Tales</h3>
-                    <p style="color: #6b5d4f; line-height: 1.6;">Making AI accessible through education and professional solutions.</p>
+                    <h3>AI Guru Tales</h3>
+                    <p style="margin-top: 0.75rem; line-height: 1.8;">Making AI accessible through education and professional solutions.</p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1rem;">Learn</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="index.html" style="color: #6b5d4f; text-decoration: none;">Educational Stories</a>
-                        <a href="post-ai-jungle-complete.html" style="color: #6b5d4f; text-decoration: none;">AI Guide</a>
+                    <h4>Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="blog.html">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html">AI Deep Dive</a>
+                        <a href="post-jungle-transformers.html">AI for Kids</a>
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1rem;">Work With Me</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="services.html" style="color: #6b5d4f; text-decoration: none;">AI Services</a>
-                        <a href="portfolio.html" style="color: #6b5d4f; text-decoration: none;">Portfolio</a>
-                        <a href="contact.html" style="color: #6b5d4f; text-decoration: none;">Contact</a>
+                    <h4>Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="services.html">AI Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">GitHub</a>
                     </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid #e8e3db; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #6b5d4f;">© 2025 AI Guru Tales. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
+            <div style="border-top: 1px solid #252220; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p>© 2025 AI Guru Tales. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Handle form submission
         const form = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
-        
         form.addEventListener('submit', function(e) {
-            // Netlify handles the actual submission
-            // This just shows the success message after submission
             setTimeout(() => {
                 successMessage.style.display = 'block';
                 form.reset();
-                // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 100);
         });
     </script>
+
 </body>
 </html>

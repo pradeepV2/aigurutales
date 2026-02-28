@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AI Guru Tales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-hero {
+            text-align: center;
+            padding: 7rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 100%;
+            background: radial-gradient(circle at top, rgba(212, 165, 116, 0.07), transparent 60%);
+            pointer-events: none;
+        }
+        .blog-hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .blog-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 80px rgba(212, 165, 116, 0.08);
+        }
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: #9a8475;
+            max-width: 580px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        .blog-hero-label {
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #d4a574;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats */
+        .stats-section {
+            padding: 2rem 0 4rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: #131110;
+            border: 1px solid #252220;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover {
+            border-color: rgba(212, 165, 116, 0.3);
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #d4a574;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.82rem;
+            color: #9a8475;
+            letter-spacing: 0.05em;
+        }
+
+        /* Stories section header */
+        .stories-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .stories-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+        .stories-header p {
+            font-size: 1rem;
+            color: #9a8475;
+        }
+
+        @media (max-width: 600px) {
+            .blog-hero h1 { font-size: 2.5rem; }
+            .stats-grid { grid-template-columns: 1fr; max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title"><a href="index.html">AI Guru Tales</a></h1>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <p class="blog-hero-label">Educational Stories</p>
+                <h1>AI Stories &amp; Insights</h1>
+                <p>Learn how AI works through creative, interactive adventures designed for curious minds of all ages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Educational Stories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">AI Models Explained</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Interactive Chapters</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="blog-container">
+        <div class="container">
+            <div class="stories-header">
+                <h2>All Stories</h2>
+                <p>Explore our library of AI educational content</p>
+            </div>
+            <div id="posts-grid" class="posts-grid">
+                <!-- Posts loaded dynamically via script.js -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h3>AI Guru Tales</h3>
+                    <p style="margin-top: 0.75rem; line-height: 1.8;">Making AI accessible through education and professional solutions.</p>
+                </div>
+                <div>
+                    <h4>Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="blog.html">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html">AI Deep Dive</a>
+                        <a href="post-jungle-transformers.html">AI for Kids</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="services.html">AI Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #252220; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p>© 2025 AI Guru Tales. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

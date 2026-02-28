@@ -4,185 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - AI Guru Tales</title>
-    <meta name="description" content="Making AI accessible through creative storytelling and professional solutions. Expert in ML, DL, GenAI, and Agentic AI.">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .about-hero {
             text-align: center;
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05), transparent);
+            padding: 7rem 0 4rem;
+            position: relative;
+            overflow: hidden;
         }
-        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 120%; height: 100%;
+            background: radial-gradient(circle at top, rgba(212, 165, 116, 0.07), transparent 60%);
+            pointer-events: none;
+        }
+        .about-hero-content { position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .about-hero-label {
+            font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: #d4a574; font-weight: 500; margin-bottom: 1rem;
+        }
         .about-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 700;
+            line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.2rem;
         }
-        
         .about-hero p {
-            font-size: 1.4rem;
-            color: #6b5d4f;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
+            font-size: 1.2rem; color: #9a8475; max-width: 600px;
+            margin: 0 auto; font-weight: 300; line-height: 1.8;
         }
-        
+
+        /* Mission */
         .mission-section {
-            max-width: 900px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            max-width: 960px; margin: 0 auto; padding: 4rem 2rem;
         }
-        
+        .mission-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 2.4rem;
+            text-align: center; margin-bottom: 0.75rem; letter-spacing: -0.02em;
+        }
+        .mission-section > p {
+            text-align: center; color: #9a8475; font-size: 1rem; margin-bottom: 3rem;
+        }
         .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin: 3rem 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin: 2rem 0;
         }
-        
         .mission-card {
-            background: white;
-            border: 2px solid #e8e3db;
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            text-align: center;
+            background: #131110; border: 1px solid #252220; border-radius: 8px;
+            padding: 3rem 2.5rem; text-align: center; transition: all 0.3s ease;
         }
-        
-        .mission-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-        
+        .mission-card:hover { border-color: rgba(212, 165, 116, 0.3); transform: translateY(-4px); }
+        .mission-icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
         .mission-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem;
         }
-        
-        .mission-card p {
-            color: #6b5d4f;
-            line-height: 1.8;
+        .mission-card p { color: #9a8475; line-height: 1.8; margin-bottom: 0.75rem; }
+        .mission-closing {
+            margin-top: 3rem; text-align: center; color: #9a8475; font-size: 1.05rem;
+            line-height: 1.9; max-width: 760px; margin-left: auto; margin-right: auto;
         }
-        
+        .mission-closing strong { color: #f0ece4; }
+
+        /* Skills */
         .skills-section {
-            background: #f8f9fa;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
+            background: #0f0d0b; padding: 5rem 2rem; margin: 2rem 0;
         }
-        
+        .skills-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 2.4rem;
+            text-align: center; margin-bottom: 0.75rem; letter-spacing: -0.02em;
+        }
+        .skills-section > p {
+            text-align: center; color: #9a8475; margin-bottom: 3rem;
+        }
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 3rem auto 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem; max-width: 1100px; margin: 0 auto;
         }
-        
         .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid #d4a574;
-        }
-        
-        .skill-category h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #d4a574;
-        }
-        
-        .skill-category ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .skill-category li {
-            padding: 0.5rem 0;
-            color: #1a1a1a;
-        }
-        
-        .skill-category li:before {
-            content: "▸ ";
-            color: #d4a574;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        
-        .values-section {
-            max-width: 900px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .value-item {
-            padding: 2rem;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #fef5e7, #ffffff);
-        }
-        
-        .value-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: #d4a574;
-        }
-        
-        .cta-box {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, #d4a574, #c09463);
-            color: white;
-            border-radius: 12px;
-            max-width: 800px;
-            margin: 4rem auto;
-        }
-        
-        .cta-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .cta-box a {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: white;
-            color: #d4a574;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            margin-top: 1.5rem;
+            background: #131110; padding: 2rem;
+            border-radius: 6px; border-left: 3px solid #d4a574;
             transition: all 0.3s ease;
         }
-        
-        .cta-box a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        .skill-category:hover { background: #1c1a17; }
+        .skill-category h4 {
+            font-size: 1.05rem; margin-bottom: 1.2rem; color: #d4a574;
+            font-weight: 600;
+        }
+        .skill-category ul { list-style: none; padding: 0; }
+        .skill-category li {
+            padding: 0.4rem 0; color: #9a8475; font-size: 0.92rem;
+            border-bottom: 1px solid #1a1815;
+        }
+        .skill-category li:last-child { border-bottom: none; }
+        .skill-category li::before { content: "▸ "; color: #d4a574; font-weight: bold; margin-right: 0.4rem; }
+
+        /* Values */
+        .values-section {
+            max-width: 1100px; margin: 0 auto; padding: 5rem 2rem;
+        }
+        .values-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 2.4rem;
+            text-align: center; margin-bottom: 0.75rem; letter-spacing: -0.02em;
+        }
+        .values-section > p {
+            text-align: center; color: #9a8475; margin-bottom: 3rem;
+        }
+        .values-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+        }
+        .value-item {
+            padding: 2rem; border-radius: 6px;
+            background: #131110; border: 1px solid #252220;
+            transition: all 0.3s ease;
+        }
+        .value-item:hover { border-color: rgba(212, 165, 116, 0.3); }
+        .value-item h4 { font-size: 1.05rem; margin-bottom: 0.75rem; color: #d4a574; font-weight: 600; }
+        .value-item p { color: #9a8475; font-size: 0.92rem; line-height: 1.7; }
+
+        /* Why section */
+        .why-section {
+            max-width: 780px; margin: 0 auto; padding: 2rem 2rem 5rem;
+        }
+        .why-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 2.2rem;
+            text-align: center; margin-bottom: 2.5rem; letter-spacing: -0.02em;
+        }
+        .why-section p {
+            color: #9a8475; line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.02rem;
+        }
+        .why-section strong { color: #f0ece4; }
+
+        /* CTA */
+        .cta-box {
+            text-align: center; padding: 4rem 2rem;
+            background: linear-gradient(135deg, #d4a574, #c09463);
+            color: white; max-width: 860px; margin: 0 auto 5rem; border-radius: 8px;
+        }
+        .cta-box h3 {
+            font-family: 'Playfair Display', serif; font-size: 2.2rem;
+            margin-bottom: 1rem; color: white !important;
+        }
+        .cta-box p { opacity: 0.92; font-size: 1.05rem; margin-bottom: 0; }
+        .cta-box a {
+            display: inline-block; padding: 1rem 2.5rem;
+            background: white; color: #c09463 !important; text-decoration: none;
+            border-radius: 4px; font-weight: 600; margin-top: 1.8rem;
+            transition: all 0.3s ease; font-size: 0.9rem; letter-spacing: 0.03em;
+        }
+        .cta-box a:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        @media (max-width: 600px) {
+            .about-hero h1 { font-size: 2.5rem; }
+            .mission-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <h1 class="site-title">
-                    <a href="index.html" style="text-decoration: none; color: inherit;">AI Guru Tales</a>
-                </h1>
+                <h1 class="site-title"><a href="index.html">AI Guru Tales</a></h1>
                 <nav class="main-nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="services.html" class="nav-link">Services</a>
                     <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                     <a href="about.html" class="nav-link active">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
@@ -190,124 +180,109 @@
         </div>
     </header>
 
-    <!-- Hero -->
     <section class="about-hero">
         <div class="container">
-            <h1>Making AI Accessible</h1>
-            <p>Through creative education and professional solutions</p>
+            <div class="about-hero-content">
+                <p class="about-hero-label">Our Story</p>
+                <h1>Making AI Accessible</h1>
+                <p>Through creative education and professional AI solutions — demystifying AI for everyone.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Mission -->
     <section class="mission-section">
-        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem;">Two Missions, One Vision</h2>
-        
+        <h2>Two Missions, One Vision</h2>
+        <p>Education and solutions — unified by the same goal</p>
         <div class="mission-grid">
             <div class="mission-card">
                 <div class="mission-icon">📚</div>
                 <h3>AI Education</h3>
                 <p>Creating engaging, interactive stories that make complex AI concepts simple and fun for kids and curious minds of all ages.</p>
-                <p style="margin-top: 1.5rem; font-weight: 500;">Making the next generation AI-literate</p>
+                <p>Making the next generation AI-literate.</p>
             </div>
-            
             <div class="mission-card">
                 <div class="mission-icon">🚀</div>
                 <h3>AI Solutions</h3>
                 <p>Building custom AI systems that solve real business problems. From chatbots to automation to intelligent agents.</p>
-                <p style="margin-top: 1.5rem; font-weight: 500;">Transforming businesses with practical AI</p>
+                <p>Transforming businesses with practical AI.</p>
             </div>
         </div>
-        
-        <p style="text-align: center; font-size: 1.2rem; margin-top: 3rem; color: #6b5d4f; line-height: 1.8;">
+        <p class="mission-closing">
             The same passion for making AI understandable drives both missions. Whether teaching a child about neural networks or implementing a business chatbot, the goal is the same: <strong>demystify AI and make it accessible to everyone.</strong>
         </p>
     </section>
 
-    <!-- Skills & Expertise -->
     <section class="skills-section">
-        <div class="container">
-            <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Technical Expertise</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #6b5d4f; font-size: 1.1rem;">Deep experience across the entire AI landscape</p>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Machine Learning</h4>
-                    <ul>
-                        <li>Supervised & Unsupervised Learning</li>
-                        <li>Neural Networks & Deep Learning</li>
-                        <li>Computer Vision (CNNs)</li>
-                        <li>NLP & Language Models</li>
-                        <li>Model Training & Optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Generative AI</h4>
-                    <ul>
-                        <li>LLMs (GPT, Claude, LLaMA)</li>
-                        <li>Prompt Engineering</li>
-                        <li>Fine-tuning & RAG</li>
-                        <li>Image Generation (Diffusion, GAN)</li>
-                        <li>Multi-modal AI</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Agentic AI</h4>
-                    <ul>
-                        <li>LangChain & LlamaIndex</li>
-                        <li>AutoGen & Multi-Agent Systems</li>
-                        <li>Tool-calling & Function Execution</li>
-                        <li>Autonomous Workflows</li>
-                        <li>Complex Task Orchestration</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Development & Deployment</h4>
-                    <ul>
-                        <li>Python (Primary Language)</li>
-                        <li>API Development & Integration</li>
-                        <li>Vector Databases</li>
-                        <li>Cloud Deployment (AWS, GCP, Azure)</li>
-                        <li>CI/CD & Production Systems</li>
-                    </ul>
-                </div>
+        <h2>Technical Expertise</h2>
+        <p>Deep experience across the entire AI landscape</p>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Machine Learning</h4>
+                <ul>
+                    <li>Supervised &amp; Unsupervised Learning</li>
+                    <li>Neural Networks &amp; Deep Learning</li>
+                    <li>Computer Vision (CNNs)</li>
+                    <li>NLP &amp; Language Models</li>
+                    <li>Model Training &amp; Optimization</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Generative AI</h4>
+                <ul>
+                    <li>LLMs (GPT, Claude, LLaMA)</li>
+                    <li>Prompt Engineering</li>
+                    <li>Fine-tuning &amp; RAG</li>
+                    <li>Image Generation (Diffusion, GAN)</li>
+                    <li>Multi-modal AI</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Agentic AI</h4>
+                <ul>
+                    <li>LangChain &amp; LlamaIndex</li>
+                    <li>AutoGen &amp; Multi-Agent Systems</li>
+                    <li>Tool-calling &amp; Function Execution</li>
+                    <li>Autonomous Workflows</li>
+                    <li>Complex Task Orchestration</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Development &amp; Deployment</h4>
+                <ul>
+                    <li>Python (Primary Language)</li>
+                    <li>API Development &amp; Integration</li>
+                    <li>Vector Databases</li>
+                    <li>Cloud Deployment (AWS, GCP, Azure)</li>
+                    <li>CI/CD &amp; Production Systems</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Values -->
     <section class="values-section">
-        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Core Values</h2>
-        <p style="text-align: center; color: #6b5d4f; font-size: 1.1rem; margin-bottom: 3rem;">What guides every project and story</p>
-        
+        <h2>Core Values</h2>
+        <p>What guides every project and story</p>
         <div class="values-grid">
             <div class="value-item">
                 <h4>🎯 Clarity Over Complexity</h4>
                 <p>AI should be understandable. Whether teaching kids or building business solutions, simplicity and clarity come first.</p>
             </div>
-            
             <div class="value-item">
                 <h4>⚡ Practical Over Theoretical</h4>
                 <p>Real solutions that work. Focus on what delivers value, not just what's technically impressive.</p>
             </div>
-            
             <div class="value-item">
                 <h4>🤝 Collaboration Over Ego</h4>
                 <p>The best results come from listening, understanding needs, and working together toward shared goals.</p>
             </div>
-            
             <div class="value-item">
                 <h4>📚 Education Over Gatekeeping</h4>
                 <p>AI shouldn't be mysterious or exclusive. Share knowledge, explain clearly, and empower others.</p>
             </div>
-            
             <div class="value-item">
                 <h4>🎨 Creativity Over Convention</h4>
                 <p>Whether it's teaching through jungle adventures or solving unique business problems, creative approaches win.</p>
             </div>
-            
             <div class="value-item">
                 <h4>🌱 Growth Over Perfection</h4>
                 <p>AI is evolving rapidly. Stay curious, keep learning, and iterate toward better solutions.</p>
@@ -315,67 +290,62 @@
         </div>
     </section>
 
-    <!-- Why This Combination Works -->
-    <section class="mission-section">
-        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem;">Why Education + Solutions?</h2>
-        
-        <div style="max-width: 700px; margin: 0 auto;">
-            <p style="font-size: 1.1rem; line-height: 2; color: #1a1a1a; margin-bottom: 1.5rem;">
-                <strong>Teaching AI to kids requires truly understanding it.</strong> You can't explain complex concepts simply unless you deeply understand them. Creating educational content forces clarity.
-            </p>
-            
-            <p style="font-size: 1.1rem; line-height: 2; color: #1a1a1a; margin-bottom: 1.5rem;">
-                <strong>Building business solutions requires practical knowledge.</strong> Real-world AI implementation teaches what actually works versus what just sounds good in theory.
-            </p>
-            
-            <p style="font-size: 1.1rem; line-height: 2; color: #1a1a1a;">
-                <strong>Together, they create a unique perspective:</strong> the ability to explain AI in simple terms while building sophisticated solutions. The education mission ensures clarity; the business mission ensures practicality.
-            </p>
-        </div>
+    <section class="why-section">
+        <h2>Why Education + Solutions?</h2>
+        <p><strong>Teaching AI to kids requires truly understanding it.</strong> You can't explain complex concepts simply unless you deeply understand them. Creating educational content forces clarity.</p>
+        <p><strong>Building business solutions requires practical knowledge.</strong> Real-world AI implementation teaches what actually works versus what just sounds good in theory.</p>
+        <p><strong>Together, they create a unique perspective:</strong> the ability to explain AI in simple terms while building sophisticated solutions. The education mission ensures clarity; the business mission ensures practicality.</p>
     </section>
 
-    <!-- CTA -->
     <div class="container">
         <div class="cta-box">
             <h3>Let's Work Together</h3>
-            <p style="font-size: 1.1rem;">Whether you're interested in AI education resources or business solutions, let's talk!</p>
+            <p>Whether you're interested in AI education resources or business solutions, let's talk!</p>
             <a href="contact.html">Get in Touch →</a>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
                 <div>
-                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">AI Guru Tales</h3>
-                    <p style="color: #6b5d4f; line-height: 1.6;">Making AI accessible through education and professional solutions.</p>
+                    <h3>AI Guru Tales</h3>
+                    <p style="margin-top: 0.75rem; line-height: 1.8;">Making AI accessible through education and professional solutions.</p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1rem;">Learn</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="index.html" style="color: #6b5d4f; text-decoration: none;">Educational Stories</a>
-                        <a href="post-ai-jungle-complete.html" style="color: #6b5d4f; text-decoration: none;">AI Guide</a>
+                    <h4>Learn</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="blog.html">Educational Stories</a>
+                        <a href="post-ai-jungle-complete.html">AI Deep Dive</a>
+                        <a href="post-jungle-transformers.html">AI for Kids</a>
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1rem;">Work With Me</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="services.html" style="color: #6b5d4f; text-decoration: none;">AI Services</a>
-                        <a href="portfolio.html" style="color: #6b5d4f; text-decoration: none;">Portfolio</a>
-                        <a href="contact.html" style="color: #6b5d4f; text-decoration: none;">Contact</a>
+                    <h4>Work With Me</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="services.html">AI Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter / X</a>
+                        <a href="#">GitHub</a>
                     </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid #e8e3db; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #6b5d4f;">© 2025 AI Guru Tales. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
+            <div style="border-top: 1px solid #252220; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p>© 2025 AI Guru Tales. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
